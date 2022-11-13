@@ -23,16 +23,17 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: List all original files
+        run: ls
+        
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+           python-version: '3.10' 
+       run: python create_file.py
+       
+       Name: List new files
+       run: ls
+        
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          
-      # Runs a set of commands using the runners shell
-      - name: Run a another script
-        run: |
-          echo this is new command
+ 
